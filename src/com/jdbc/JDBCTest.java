@@ -10,21 +10,24 @@ import java.sql.*;
 public class JDBCTest {
     static  final String JDBC_DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
     static  final String JDBC_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    static  final String name = "root";
-    static  final String password = "1012";
+    static  final String NAME = "root";
+    static  final String PASSWORD= "1012";
 
     public static void main(String[] args) {
         Connection conn=null;
         Statement stmt=null;
         try {
             Class.forName(JDBC_DRIVER_NAME);
-            conn=DriverManager.getConnection(JDBC_URL, name, password);
+            conn=DriverManager.getConnection(JDBC_URL, NAME, PASSWORD);
             stmt=conn.createStatement();
             String sql ="select * from student";
             ResultSet rs=stmt.executeQuery(sql);
+            ResultSetMetaData md= rs.getMetaData();
+            int i=1;
             while(rs.next()) {
-                System.out.println(rs.getString(1));
+                System.out.println(rs.getString(i));
             }
+            rs.close();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
