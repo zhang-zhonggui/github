@@ -6,4 +6,7 @@ package com.jdbc.day02;
  * @DateTime: 2021/11/27 9:58
  */
 public class SelectTest {
+    public static void main(String[] args) {
+
+    }
 }
