@@ -12,8 +12,8 @@ import java.sql.PreparedStatement;
 public class JDBCTest {
     public static void main(String[] args) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hehe?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC","root","1012");
-        String sql="insert into student values(null ,'李四',18,'浙江')";
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hehe?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "1012");
+        String sql = "insert into student values(null ,'李四',18,'浙江')";
         PreparedStatement ps = conn.prepareStatement(sql);
         int i = ps.executeUpdate();
         System.out.println(i);
