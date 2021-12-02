@@ -23,6 +23,8 @@ public class Test1 {
         PreparedStatement ps = conn.prepareStatement(sql);
         int i = ps.executeUpdate();
         System.out.println(i);
+        conn.close();
+        ps.close();
     }
 
     @Test
@@ -33,6 +35,8 @@ public class Test1 {
         PreparedStatement ps = conn.prepareStatement("delete from student where id = 3");
         int i = ps.executeUpdate();
         System.out.println(i);
+        conn.close();
+        ps.close();
     }
     @Test
     //增加
@@ -42,8 +46,8 @@ public class Test1 {
         PreparedStatement ps = conn.prepareStatement("insert  into student values ("+student.getId()+",'"+student.getName()+"',"+student.getAge()+",'"+student.address+"')");
         int i = ps.executeUpdate();
         System.out.println(i);
-
-
+        conn.close();
+        ps.close();
     }
 
 }

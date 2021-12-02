@@ -17,5 +17,7 @@ public class JDBCTest {
         PreparedStatement ps = conn.prepareStatement(sql);
         int i = ps.executeUpdate();
         System.out.println(i);
+        conn.close();
+        ps.close();
     }
 }

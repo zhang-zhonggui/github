@@ -16,7 +16,7 @@ public class Test2 {
     @Test
     public void test1() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/hehe?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC","root","1012");
+        Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/hehe?","root","1012");
         String sql ="insert  into  student values (null,?,?,?)";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setObject(1,stu.getName());
@@ -24,6 +24,10 @@ public class Test2 {
         ps.setObject(3,stu.getAddress());
         int i = ps.executeUpdate();
         System.out.println(i);
-
+        conn.close();
+        ps.close();
+    }
+    @Test
+    public void test2() throws Exception {
     }
 }
