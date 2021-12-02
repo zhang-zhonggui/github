@@ -14,13 +14,11 @@ import java.net.URL;
 public class MyTest {
     /**
      * 向指定 URL 发送POST方法的请求
-     *
      * @param httpUrl 发送请求的 URL
      * @param param   请求参数是json
      * @return 所代表远程资源的响应结果
      */
     public static String doPost(String httpUrl, String param) {
-
         HttpURLConnection connection = null;
         InputStream is = null;
         OutputStream os = null;
