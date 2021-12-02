@@ -27,7 +27,6 @@ public class JDBCTest {
             while (rs.next()){
                 System.out.println(metaData.getColumnName(len)+"----" +rs.getString(len));
             }
-
             System.out.println(rs);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
