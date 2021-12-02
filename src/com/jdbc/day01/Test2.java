@@ -1,4 +1,4 @@
-package com.jddc.day01;
+package com.jdbc.day01;
 
 import org.junit.Test;
 
