@@ -19,9 +19,11 @@ public class Test2 {
         Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/hehe?","root","1012");
         String sql ="insert  into  student values (null,?,?,?)";
         PreparedStatement ps = conn.prepareStatement(sql);
+
         ps.setObject(1,stu.getName());
         ps.setObject(2,stu.getAge());
         ps.setObject(3,stu.getAddress());
+
         int i = ps.executeUpdate();
         System.out.println(i);
         conn.close();
