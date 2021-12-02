@@ -1,4 +1,4 @@
-package com.api;
+package com.wd.api;
 
 import sun.net.www.protocol.http.HttpURLConnection;
 
