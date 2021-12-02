@@ -19,15 +19,16 @@ public class JDBCTest {
         try {
             Class.forName(JDBC_DRIVER_NAME);
             conn=DriverManager.getConnection(JDBC_URL, NAME, PASSWORD);
-            stmt=conn.createStatement();
             String sql ="select * from student";
-            ResultSet rs=stmt.executeQuery(sql);
-            ResultSetMetaData md= rs.getMetaData();
-            int i=1;
-            while(rs.next()) {
-                System.out.println(rs.getString(i));
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            ResultSetMetaData metaData = rs.getMetaData();
+            int len=1;
+            while (rs.next()){
+                System.out.println(metaData.getColumnName(len)+"----" +rs.getString(len));
             }
-            rs.close();
+
+            System.out.println(rs);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
