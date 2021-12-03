@@ -1,4 +1,4 @@
-package com.jdbc.day01;
+package com.jdbc.day01.test3;
 
 /**
  * @Author: zzg
@@ -6,10 +6,10 @@ package com.jdbc.day01;
  * @DateTime: 2021/11/27 9:58
  */
 public class Student {
-    int id;
-    String name;
-    int age;
-    String address;
+    private int id;
+    private String name;
+    private int age;
+    private String address;
 
     public Student() {
     }
