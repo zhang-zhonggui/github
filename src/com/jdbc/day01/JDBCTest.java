@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 
 /**
  * @Author: zzg
- * @Description: jddc的测试连接
+ * @Description: jdbc的测试连接
  * @DateTime: 2021/11/27 9:58
  */
 public class JDBCTest {

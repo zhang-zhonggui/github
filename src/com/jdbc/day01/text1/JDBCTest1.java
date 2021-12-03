@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 
 /**
  * @Author: zzg
- * @Description: jdbc的一次联系
+ * @Description: jdbc的一次联系对MySQL的曾删改
  * @DateTime: 2021/11/27 9:58
  */
 public class JDBCTest1 {
