@@ -1,4 +1,4 @@
-package com.jdbc.day01.text1;
+package com.jdbc.day01.test1;
 
 import org.junit.Test;
 
