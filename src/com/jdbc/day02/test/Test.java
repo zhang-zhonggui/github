@@ -13,14 +13,21 @@ import java.util.Map;
  */
 public class Test {
     public static void main(String[] args) throws Exception {
+        //设置路径 name 及密码
         String url = "jdbc:mysql://localhost:3306/test";
         String name = "root";
         String password = "1012";
+        //加载驱动
         Class.forName("com.mysql.cj.jdbc.Driver");
+        //进行连接
         Connection conn = DriverManager.getConnection(url, name, password);
+        //运行书写的sql语句
         PreparedStatement ps = conn.prepareStatement("select  * from student");
+        //将sql获取的数据存储到ResultSet中
         ResultSet rs = ps.executeQuery();
+        //数据的存储
         ResultSetMetaData md = rs.getMetaData();
+        //创建List——Map 将数据存储起来
         List<Map> list = new LinkedList();
         while (rs.next()) {
             Map map = new HashMap();
